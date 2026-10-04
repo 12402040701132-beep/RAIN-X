@@ -38,7 +38,7 @@ Bashstreamlit run frontend/app.py
 Bashpython scripts/run_pipeline_demo.py
 4. Start the FastAPI Inference Server
 Bashuvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
-Swagger docs available at: http://127.0.0.1:8000/docs
+Swagger docs: http://127.0.0.1:8000/docs
 5. Run Tests
 Bashpytest tests/ -v
 
@@ -73,69 +73,10 @@ textRAIN-X/
 └── README.md
 
 5-Page Streamlit Dashboard
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-PageWhat it Shows1. Operational ForecastCorrected rainfall, Heavy-rain probability, Dominant regime, P10–P90 uncertainty band, District-level view2. Weather Regime EngineSoft probability bars for Active / Break / Depression / Other + Confidence score3. Model ComparisonSide-by-side comparison: Observed vs Raw NWP vs Quantile Mapping vs Generic ML vs RAIN-X4. Verification & MetricsRMSE, MAE, Bias, CSI, POD, FAR, ETS, FSS on unseen chronological test data5. Explainability & SafetyFeature importance, Data quality flag, Safe fallback status (PASS / WARNING / FALLBACK)
+PageWhat it Shows1. Operational ForecastCorrected rainfall, Heavy-rain probability, Dominant regime, P10–P90 uncertainty, District view2. Weather Regime EngineSoft probability bars for Active / Break / Depression / Other + Confidence score3. Model ComparisonSide-by-side comparison: Observed vs Raw NWP vs Quantile Mapping vs Generic ML vs RAIN-X4. Verification & MetricsRMSE, MAE, Bias, CSI, POD, FAR, ETS, FSS on unseen chronological test data5. Explainability & SafetyFeature importance, Data quality flag, Safe fallback status (PASS / WARNING / FALLBACK)
 
 Scientific Proof Ladder
 RAIN-X is always evaluated against strong baselines on unseen chronological data:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ModelMethodPurposeBaseline ARaw NWPOfficial forecast without any correctionBaseline BQuantile MappingClassical statistical bias correctionBaseline CGeneric MLOne ML model for all weather situationsProposedRAIN-XRegime experts + Soft Fusion + Uncertainty
 Key Principle: We only claim improvement when RAIN-X beats all three baselines on the held-out test set.
 
@@ -165,35 +106,6 @@ Leakage-Free Evaluation – Strict chronological train / validate / test splits
 
 
 Technology Stack
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 LayerToolsData & FeaturesPython, Pandas, NumPy, xarray, GeoPandasMachine LearningLightGBM / XGBoost, scikit-learn, SHAPDashboardStreamlit + PlotlyAPIFastAPI + UvicornDeploymentDocker-ready
 
 Important Note for Judges
@@ -212,3 +124,5 @@ Team ID: 156139
 Smart India Hackathon 2026 | SIH26080
 
 Sponsored by: Ministry of Earth Sciences (MoES) / NCMRWF
+
+RAIN-X – Understand the atmosphere first. Then correct the rainfall.
