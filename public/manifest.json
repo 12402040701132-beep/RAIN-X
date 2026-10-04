@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "RAIN-X: Monsoon Rainfall Intelligence System",
+  "short_name": "RAIN-X",
+  "description": "Operational Regime-Aware AI Post-Processing System for Numerical Weather Prediction (MoES / NCMRWF).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0B192C",
+  "background_color": "#070f1e",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

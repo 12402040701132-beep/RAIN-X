@@ -1,0 +1,48 @@
+project:
+  name: "RAIN-X"
+  title: "Regime-Aware Extreme Rainfall Intelligence Engine"
+  project_id: "MOES-NCMRWF-NWP-2026"
+  scope: "Regime-Aware AI Post-Processing of Monsoon Rainfall Forecasts"
+  division: "Numerical Weather Prediction & AI Research"
+  sponsor: "Ministry of Earth Sciences (MoES) / NCMRWF, Government of India"
+  operational_unit: "NCMRWF Operational Division"
+  system_id: "RX-OPS-2026"
+  version: "1.0.0-rc1"
+
+meteorology:
+  regimes:
+    - id: "active"
+      name: "Active Monsoon"
+      description: "Widespread moderate-to-heavy precipitation over core monsoon zone; trough active; strong south-westerly jet."
+      color: "#0284c7"
+    - id: "break"
+      name: "Break / Subdued Monsoon"
+      description: "Monsoon trough shifted north toward Himalayan foothills; subdued rainfall across central India; localized foothill/northeast rain."
+      color: "#eab308"
+    - id: "depression"
+      name: "Monsoon Low / Depression"
+      description: "Organized synoptic vortex formed over Bay of Bengal / Arabian Sea moving inland along monsoon trough; high risk of extreme rain."
+      color: "#dc2626"
+    - id: "other"
+      name: "Other / Western Disturbance"
+      description: "Transitional or peripheral patterns, orographic coastal convergence modifiers, and mid-latitude wave interactions."
+      color: "#14b8a6"
+
+thresholds:
+  heavy_rain_mm: 64.5          # Official IMD definition of heavy rainfall (>= 64.5 mm/day)
+  very_heavy_rain_mm: 115.6    # IMD very heavy rainfall threshold
+  extremely_heavy_rain_mm: 204.5 # IMD extremely heavy rainfall threshold
+  low_confidence_regime: 0.40  # If max regime probability < 0.40, trigger fallback / wider uncertainty
+  shrinkage_min_samples: 50     # Below this threshold, shrink expert weights toward generic model
+  ood_mahalanobis_threshold: 3.5
+
+quantiles:
+  lower: 0.10   # P10
+  median: 0.50  # P50
+  upper: 0.90   # P90
+
+baselines:
+  - raw_nwp
+  - quantile_mapping
+  - generic_ml
+  - rain_x

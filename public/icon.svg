@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B192C"/>
+      <stop offset="100%" stop-color="#071324"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ADB5"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="210" stroke="#00ADB5" stroke-width="8" stroke-dasharray="16,12" fill="none" opacity="0.4"/>
+  
+  <!-- Stylized Cloud -->
+  <path d="M170 320 L350 320 C385 320 410 295 410 260 C410 228 385 204 355 202 C348 152 305 115 255 115 C212 115 174 142 162 182 C132 188 110 215 110 248 C110 286 138 320 170 320 Z" fill="url(#tealGrad)"/>
+  
+  <!-- Raindrop Vectors -->
+  <path d="M190 350 L170 395" stroke="#38bdf8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M256 350 L236 405" stroke="#38bdf8" stroke-width="14" stroke-linecap="round"/>
+  <path d="M322 350 L302 395" stroke="#38bdf8" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Centered RX Letters -->
+  <text x="256" y="245" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="70" fill="#ffffff" text-anchor="middle" letter-spacing="2">RAIN-X</text>
+</svg>

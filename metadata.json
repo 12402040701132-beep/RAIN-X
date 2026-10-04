@@ -1,0 +1,6 @@
+{
+  "name": "RAIN-X - Monsoon Rainfall Intelligence System",
+  "description": "Operational Regime-Aware AI Post-Processing System for Numerical Weather Prediction (MoES / NCMRWF, Government of India).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
